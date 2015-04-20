@@ -9,26 +9,24 @@
   <script src="scripts/vendor/requirejs/require.js"></script>
   <script>
     $(document).ready(function() {
-		requirejs.config({
-		    baseUrl: '/dev/snake/scripts/lib',
-		    paths: {
-        		"jquery": "../vendor/jquery/jquery-1.7.2.min"
-    		},
-		});
+    requirejs.config({
+      baseUrl: '/dev/snake/scripts/lib',
+      paths: {
+        "jquery": "../vendor/jquery/jquery-1.7.2.min"
+      },
+    });
 	      
-	  	require(['game'], function(Game) {
-			"use strict";
+    require(['game'], function(Game) {
+      "use strict";
 			
-			Game.create().start();
+      Game.create().start();
 			
-			$('#start').click(function() {
-		  		Game.create().start();	  		
-				return false;
-			});
-	  	});
-	  	
-	  	
-   });
+      $('#start').click(function() {
+        Game.create().start();	  		
+        return false;
+      });
+    });	
+  });
   </script>
   <pre>
 move: Z Q S D
