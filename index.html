@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="utf-8" />
+  <title>JCraft</title>
+</head>
+<body>
+  <script src="scripts/vendor/jquery/jquery-1.7.2.min.js"></script>	
+  <script src="scripts/vendor/requirejs/require.js"></script>
+  <script>
+    $(document).ready(function() {
+		requirejs.config({
+		    baseUrl: '/dev/snake/scripts/lib',
+		    paths: {
+        		"jquery": "../vendor/jquery/jquery-1.7.2.min"
+    		},
+		});
+	      
+	  	require(['game'], function(Game) {
+			"use strict";
+			
+			Game.create().start();
+			
+			$('#start').click(function() {
+		  		Game.create().start();	  		
+				return false;
+			});
+	  	});
+	  	
+	  	
+   });
+  </script>
+  <pre>
+move: Z Q S D
+<a href="#" id="start">Restart</a>
+Points: <span id="point">0</span>  	
+<div id="canvasASCII">&nbsp;</div>
+  </pre>
+</body>
+</html>
